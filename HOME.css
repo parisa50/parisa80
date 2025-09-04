@@ -1,0 +1,105 @@
+/* อนิเมชันเมื่อโหลดเมนูเข้ามา */
+@keyframes slideIn {
+  from {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* อนิเมชันตอน hover */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  background: linear-gradient(to bottom, #e6d098, #f1dfab);
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100px; /* กำหนดความกว้างเริ่มต้น */
+  animation: slideIn 1s ease-out;
+}
+
+.menu-item {
+  background-color: #4cd1db;
+  color: black;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 37px;
+  border-radius: 50px;
+  cursor: pointer;
+  user-select: none;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.menu-item:hover {
+  background-color: #3bb1c1;
+  animation: pulse 0.6s ease-in-out;
+}
+
+/* สำหรับขนาดหน้าจอ 1440px (Desktop) */
+@media (max-width: 1440px) {
+  .menu {
+    width: 240px;  /* ขยายขนาดเมนูในหน้าจอขนาดใหญ่ */
+    gap: 16px;  /* ลดช่องว่างระหว่างเมนู */
+  }
+
+  .menu-item {
+    font-size: 40px;  /* ขนาดฟอนต์ใหญ่ขึ้น */
+    padding: 24px 0;
+  }
+}
+
+/* สำหรับขนาดหน้าจอ 760px (Tablet) */
+@media (max-width: 760px) {
+  body {
+    padding: 10px;
+  }
+
+  .menu {
+    width: 180px; /* ลดขนาดเมนูในแท็บเล็ต */
+    gap: 12px;  /* ลดช่องว่างระหว่างเมนู */
+  }
+
+  .menu-item {
+    font-size: 30px;  /* ลดขนาดฟอนต์ให้เหมาะสมกับแท็บเล็ต */
+    padding: 18px 0;
+  }
+}
+
+/* สำหรับขนาดหน้าจอ 440px (Mobile) */
+@media (max-width: 440px) {
+  body {
+    padding: 5px;
+  }
+
+  .menu {
+    width: 160px; /* ลดขนาดเมนูในมือถือ */
+    gap: 8px;  /* ลดช่องว่างระหว่างเมนู */
+  }
+
+  .menu-item {
+    font-size: 24px;  /* ลดขนาดฟอนต์ให้เหมาะสมกับมือถือ */
+    padding: 14px 0;
+  }
+}

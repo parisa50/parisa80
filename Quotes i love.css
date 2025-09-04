@@ -1,0 +1,202 @@
+/* ฟอนต์และพื้นหลัง */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+  background-color: #ffe4b5; /* สีพื้นหลังอ่อน */
+}
+
+/* ปุ่มกลับ */
+.back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #ff80bf;
+  color: #000;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 20px;
+  transition: 0.3s;
+  animation: fadeIn 1s ease-out; /* อนิเมชัน fadeIn */
+}
+
+.back-btn:hover {
+  background-color: #ff4da6;
+  color: white;
+  animation: bounce 0.3s ease-in-out; /* อนิเมชัน bounce */
+}
+
+/* อนิเมชัน fadeIn */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* อนิเมชัน bounce */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* หัวข้อ */
+.title {
+  text-align: center;
+  margin: 20px auto;
+  background-color: #ff80bf;
+  display: block;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 28px;
+  width: fit-content; /* ให้กล่องพอดีกับข้อความ */
+  animation: fadeIn 1s ease-out; /* อนิเมชัน fadeIn */
+}
+
+/* คอนเทนต์ */
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  margin-top: 40px;
+  flex-wrap: wrap; /* ทำให้ responsive */
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 0.5s; /* ดีเลย์การปรากฏ */
+}
+
+/* รูป */
+.image-container img {
+  width: 150px;   /* ขนาดปานกลาง */
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  animation: slideIn 1s ease-out; /* อนิเมชัน slideIn */
+  opacity: 0;
+  animation-delay: 0.5s; /* ดีเลย์การปรากฏ */
+}
+
+/* อนิเมชัน slideIn */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* กล่องคำคม */
+.quote-container {
+  max-width: 400px;
+  text-align: left;
+  animation: fadeIn 1s ease-out;
+  opacity: 0;
+  animation-delay: 0.8s; /* ดีเลย์การปรากฏ */
+}
+
+.quote {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.quote-th {
+  font-size: 18px;
+  color: #555;
+}
+
+/* Responsive Design */
+
+/* ขนาดหน้าจอ 1440px (Desktop) */
+@media (max-width: 1440px) {
+  .title {
+    font-size: 32px;
+  }
+
+  .content {
+    gap: 50px;
+  }
+
+  .image-container img {
+    width: 180px;
+  }
+
+  .quote-container {
+    max-width: 500px;
+  }
+}
+
+/* ขนาดหน้าจอ 760px (Tablet) */
+@media (max-width: 760px) {
+  .content {
+    gap: 30px;
+  }
+
+  .image-container img {
+    width: 200px;
+  }
+
+  .quote-container {
+    max-width: 350px;
+  }
+
+  .title {
+    font-size: 26px;
+  }
+}
+
+/* ขนาดหน้าจอ 440px (Mobile Portrait) */
+@media (max-width: 440px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .image-container img {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .quote-container {
+    max-width: 100%;
+  }
+
+  .quote {
+    font-size: 18px;
+  }
+
+  .quote-th {
+    font-size: 16px;
+  }
+
+  .title {
+    font-size: 22px;
+    margin: 10px auto;
+  }
+
+  .back-btn {
+    font-size: 18px;
+    padding: 8px 15px;
+    top: 10px;
+    left: 10px;
+  }
+}

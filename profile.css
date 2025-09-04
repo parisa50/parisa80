@@ -1,0 +1,190 @@
+/* ฟอนต์และพื้นหลัง */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background-color: #ffe4b5;
+  overflow-x: hidden;
+}
+
+/* กล่องหลัก */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 50px;
+  gap: 50px;
+  animation: fadeIn 1.2s ease-in-out;
+  flex-wrap: wrap;
+}
+
+/* ปุ่มย้อนกลับ */
+.profile-header {
+  background-color: #4dd0e1;
+  width: 120px;
+  text-align: center;
+  border-radius: 50px;
+  font-weight: bold;
+  padding: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  animation: bounceIn 1.5s ease-in-out;
+  transition: background-color 0.3s, transform 0.2s;
+  margin-bottom: 20px;
+}
+
+.profile-header:hover {
+  background-color: #00bcd4;
+  transform: scale(1.05);
+}
+
+/* รูปโปรไฟล์ */
+.profile-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1 1 500px;
+}
+
+.profile-image img {
+  width: 300%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 10px;
+  animation: bounceIn 1.4s ease-in-out;
+  transition: transform 0.3s ease;
+}
+
+.profile-image img:hover {
+  transform: scale(1.05);
+}
+
+/* ข้อมูลโปรไฟล์ */
+.profile-info {
+  font-size: 18px;
+  color: #000;
+  animation: slideUp 1s ease-in-out;
+  flex: 1 1 500px;
+}
+
+.profile-info h2 {
+  margin-top: 0;
+  color: #444;
+}
+
+.profile-info p {
+  margin-bottom: 10px;
+}
+
+/* ===== Animation Keyframes ===== */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ===== Responsive Design ===== */
+
+/* ขนาดหน้าจอ 1440px (Desktop) */
+@media (max-width: 1440px) {
+  .container {
+    padding: 60px;
+    gap: 50px;
+  }
+
+  .profile-header {
+    width: 150px;
+    font-size: 22px;
+  }
+
+  .profile-image img {
+    max-width: 750px;
+  }
+
+  .profile-info {
+    font-size: 18px;
+  }
+}
+
+/* ขนาดหน้าจอ 760px (Tablet) */
+@media (max-width: 760px) {
+  .container {
+    padding: 30px;
+    gap: 30px;
+  }
+
+  .profile-header {
+    width: 130px;
+    font-size: 20px;
+  }
+
+  .profile-image img {
+    max-width: 100%;
+    width: 250%;
+  }
+
+  .profile-info {
+    font-size: 16px;
+  }
+}
+
+/* ขนาดหน้าจอ 440px (Mobile Portrait) */
+@media (max-width: 440px) {
+  .container {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .profile-header {
+    width: 100%;
+    max-width: 300px;
+    font-size: 18px;
+    margin: 0 auto;
+  }
+
+  .profile-image {
+    flex: 1 1 100%;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .profile-image img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+  }
+
+  .profile-info {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .profile-header {
+    width: 100%;
+    font-size: 18px;
+  }
+}

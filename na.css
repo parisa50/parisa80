@@ -1,0 +1,123 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fde1b4;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 300px);
+  grid-template-rows: repeat(2, 180px);
+  gap: 10x;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+  padding: 120px;
+  box-sizing: border-box;
+}
+
+.card {
+  border-radius: 30px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.card-blue {
+  background-color: #a0e4dd;
+}
+
+.card-pink {
+  background-color: #fbb7e4;
+}
+
+.tab {
+  height: 39px;
+  width: 200%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+  display: flex;
+  align-items: center;
+  padding-left: 1px;
+  opacity: 0.9;
+  background-size: 40px 100%;
+  background-repeat: repeat-x;
+}
+
+.tab-blue {
+  background-image: repeating-linear-gradient(
+    135deg,
+    #3fbcc2,
+    #3fbcc2 10px,
+    transparent 20px,
+    transparent 30px
+  );
+  background-color: #5fc7c4;
+}
+
+.tab-purple {
+  background-image: repeating-linear-gradient(
+    135deg,
+    #c874e1,
+    #c874e1 12px,
+    transparent 12px,
+    transparent 30px
+  );
+  background-color: #d68ce5;
+}
+
+.center-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 45px;
+  font-weight: bold;
+  white-space: nowrap;
+  text-align: center;
+  z-index: 10;
+}
+
+.center-text a {
+  text-decoration: none;
+  color: #000;
+  transition: 0.2s ease;
+}
+
+.center-text a:hover {
+  text-decoration: underline;
+  color: #444;
+}
+
+/* ===== Responsive Layout ===== */
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 180px);
+  }
+
+  .center-text {
+    font-size: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    grid-template-rows: repeat(4, 150px);
+    gap: 8px;
+  }
+
+  .center-text {
+    font-size: 30px;
+  }
+
+  .tab {
+    height: 30px;
+  }
+}
